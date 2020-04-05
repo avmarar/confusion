@@ -1,10 +1,10 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
-import { Navbar, NavbarBrand } from 'reactstrap'
+import React from "react";
+import logo from "./logo.svg";
+import "./App.css";
+import { Navbar, NavbarBrand } from "reactstrap";
 
 class App extends Component {
-  render () {
+  render() {
     return (
       <div className="App">
         <Navbar dark color="primary">
@@ -13,7 +13,7 @@ class App extends Component {
           </div>
         </Navbar>
       </div>
-    )
+    );
   }
 }
 export default App;
