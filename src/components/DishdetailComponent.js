@@ -5,13 +5,15 @@ class DishDetail extends Component {
   renderDish(dish) {
     if (dish != null)
       return (
-        <Card>
-          <CardImg top src={dish.image} alt={dish.name} />
-          <CardBody>
-            <CardTitle>{dish.name}</CardTitle>
-            <CardText>{dish.description}</CardText>
-          </CardBody>
-        </Card>
+        <div className="col-12 col-md-5 m-1">
+          <Card key={dish.id}>
+            <CardImg top src={dish.image} alt={dish.name} />
+            <CardBody>
+              <CardTitle>{dish.name}</CardTitle>
+              <CardText>{dish.description}</CardText>
+            </CardBody>
+          </Card>
+        </div>
       );
     else {
       return <div></div>;
@@ -24,7 +26,12 @@ class DishDetail extends Component {
         <li key={comment.id}>
           <p>{comment.comment}</p>
           <p>
-            --{comment.author},{comment.date}
+            --{comment.author},&nbsp;
+            {new Intl.DateTimeFormat("en-US", {
+              year: "numeric",
+              month: "short",
+              day: "2-digit",
+            }).format(new Date(Date.parse(comment.date)))}
           </p>
         </li>
       );
@@ -32,7 +39,7 @@ class DishDetail extends Component {
 
     if (comments != null) {
       return (
-        <div>
+        <div className="col-12 col-md-5 m-1">
           <h4>Comments</h4>
           <ul className="list-unstyled">{comment}</ul>
         </div>
@@ -43,19 +50,17 @@ class DishDetail extends Component {
   }
 
   render() {
-    if (this.props.selectedDish) {
+    if (this.props.dish) {
       return (
-        <div className="row">
-          <div className="col-12 col-md-5 m-1">
-            {this.renderDish(this.props.selectedDish)}
-          </div>
-          <div className="col-12 col-md-5 m-1">
-            {this.renderComments(this.props.selectedDish.comments)}
+        <div className="container">
+          <div className="row">
+            {this.renderDish(this.props.dish)}
+            {this.renderComments(this.props.dish.comments)}
           </div>
         </div>
       );
     } else {
-      return <div></div>;
+      return <div>Hello</div>;
     }
   }
 }
