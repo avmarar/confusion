@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from 'react-router-dom';
 
 function Footer(props) {
   return (
@@ -9,16 +10,16 @@ function Footer(props) {
             <h5>Links</h5>
             <ul className="list-unstyled">
               <li>
-                <a href="#">Home</a>
+                <Link to='/home'>Home</Link>
               </li>
               <li>
-                <a href="#">About</a>
+                <Link to='/aboutus'>About Us</Link>
               </li>
               <li>
-                <a href="#">Menu</a>
+                <Link to='/menu'>Menu</Link>
               </li>
               <li>
-                <a href="contactus.html">Contact Us </a>
+                <Link to='/contactus'>Contact Us</Link>
               </li>
             </ul>
           </div>
@@ -31,12 +32,12 @@ function Footer(props) {
               <br />
               Hong Kong
               <br />
-              <i className="fa fa-phone fa-lg"></i>: +852 1234 5678
+              <i className="fa fa-phone fa-lg"></i> : +852 1234 5678
               <br />
-              <i className="fa fa-fax fa-lg"></i>: +852 8765 4321
+              <i className="fa fa-fax fa-lg"></i> : +852 8765 4321
               <br />
-              <i className="fa fa-envelope fa-lg"></i>:{" "}
-              <a href="mailto: confusion@food.net"></a>
+              <i className="fa fa-envelope fa-lg"></i> : {" "}
+              <a href="mailto: confusion@food.net">confusion@food.net</a>
             </address>
           </div>
           <div className="col-12 col-sm-4 align-self-center">
